@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+      <head>
+        <meta charset="utf-8">
+        <title>Uber Rides Prediction Model</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		
+		<style>
+			.content {
+			  max-width: 500px;
+			  margin: auto;
+			}
+			
+			
+			.bg-img{
+		width: 100%;
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+			}
+			</style>
+    </head>
+	
+<body>
+<div class="bg-img">
+<div class="content">
+    <body>
+  
+        <h1>Breast cancer predection</h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="text" name="Race" placeholder="Race" required="required">
+            <input type="text" name="Marital Status" placeholder="Marital Status" required="required">
+            <input type="text" name="N Stage" placeholder="N Stage" required="required">
+            <input type="text" name="6th Stage" placeholder="6th Stage" required="required">
+            <input type="text" name="differentiate" placeholder="differentiate" required="required">
+            <input type="text" name="Grade" placeholder="Grade" required="required">
+            <input type="text" name="A Stage" placeholder="A Stage" required="required">
+            <input type="text" name="Estrogen Status" placeholder="Estrogen Status" required="required">
+            <input type="text" name="Progesterone Status" placeholder="Progesterone Status" required="required">
+            <input type="text" name="Age" placeholder="Age" required="required">
+            <input type="text" name="Tumor_Size" placeholder="Tumor_Size" required="required">
+            <input type="text" name="Regional Node Examined" placeholder="Regional Node Examined" required="required">
+            <input type="text" name="Reginol Node Positive" placeholder="Reginol Node Positive" required="required">
+            <input type="text" name="Survival Months" placeholder="Survival Months" required="required">
+            <input type="text" name="breast_cancer_history" placeholder="breast_cancer_history" required="required">
+            <button type="submit" class="btn btn-primary btn-block btn-large">Run</button>
+        </form>
+        <br>
+        <br>
+        {{ prediction_text }}   		
+</div>
+</div>
+</html>
