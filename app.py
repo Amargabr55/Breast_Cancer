@@ -1,12 +1,13 @@
 import numpy as np
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import math
 
 app = Flask(__name__)
 with open('breast_cancer.pkl', 'rb') as f:
     model, label_encoder = pickle.load(f)
-    @app.route('/')
+
+@app.route('/')
 def home():
     return jsonify({'prediction_text': "Predicted stage: {}"})
 
