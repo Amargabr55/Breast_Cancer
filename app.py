@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Load the pre-trained model and label encoder
 with open('breast_cancer.pkl', 'rb') as f:
     model, label_encoder = pickle.load(f)
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET'])
 def home():
     return jsonify({'message': 'Send a POST request to /predict endpoint with required data for prediction.'})
 @app.route('/predict', methods=['POST'])
