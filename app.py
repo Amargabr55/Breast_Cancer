@@ -11,7 +11,7 @@ with open('breast_cancer.pkl', 'rb') as f:
 def home():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
     data = request.form.to_dict()
     input_data = [int(data['Race']), int(data['Marital Status']), int(data['N Stage']), int(data['6th Stage']), 
