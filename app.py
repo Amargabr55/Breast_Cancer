@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import pickle
 import math
 
@@ -7,11 +7,7 @@ app = Flask(__name__)
 with open('breast_cancer.pkl', 'rb') as f:
     model, label_encoder = pickle.load(f)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     data = request.form.to_dict()
     input_data = [int(data['Race']), int(data['Marital Status']), int(data['N Stage']), int(data['6th Stage']), 
