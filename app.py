@@ -6,6 +6,9 @@ import math
 app = Flask(__name__)
 with open('breast_cancer.pkl', 'rb') as f:
     model, label_encoder = pickle.load(f)
+    @app.route('/')
+def home():
+    return jsonify({'prediction_text': "Predicted stage: {}"})
 
 @app.route('/predict', methods=['POST'])
 def predict():
