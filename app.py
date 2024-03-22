@@ -17,20 +17,20 @@ def predict():
     if request.method == 'POST':
         # Simulated JSON data for prediction
         data = {
-            'Race':2,
+            'Race':2
             'Marital Status':1,
-            'N Stage': 0,
-            '6th Stage': 0,
-            'Differentiate':1,
+            'N Stage': 1,
+            '6th Stage': 2,
+            'Differentiate':0,
             'Grade': 2,
             'A Stage': 1,
             'Estrogen Status': 1,
             'Progesterone Status': 1,
-            'Age': 45,
-            'Tumor_Size': 4,
-            'Regional Node Examined': 3,
-            'Reginol Node Positive': 0,
-            'Survival Months': 60,
+            'Age': 50,
+            'Tumor_Size':35,
+            'Regional Node Examined':14,
+            'Reginol Node Positive':5,
+            'Survival Months': 62,
             'Breast Cancer History': 1
         }
 
