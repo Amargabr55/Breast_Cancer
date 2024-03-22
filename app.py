@@ -15,25 +15,15 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        # Simulated JSON data for prediction
-        data = {
-            'Race': 'Caucasian',
-            'Marital Status': 'Married',
-            'N Stage': 1,
-            '6th Stage': 2,
-            'Differentiate': 'Well',
-            'Grade': 'I',
-            'A Stage': 'T1',
-            'Estrogen Status': 'Positive',
-            'Progesterone Status': 'Negative',
-            'Age': 45,
-            'Tumor_Size': 2.5,
-            'Regional Node Examined': 3,
-            'Reginol Node Positive': 0,
-            'Survival Months': 60,
-            'Breast Cancer History': 'No'
-        }
+        # Get the raw request data
+        raw_data = request.data
 
+        # Attempt to parse the raw request data as JSON
+        try:
+            data = json.loads(raw_data)
+        except ValueError:
+            return jsonify({'error': 'Request must be in JSON format'}), 400
+        
         # Check if all required fields are present
         required_fields = [
             'Race', 'Marital Status', 'N Stage', '6th Stage',
