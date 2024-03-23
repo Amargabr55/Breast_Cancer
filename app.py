@@ -17,6 +17,10 @@ def predict():
         # Get JSON data from the request
         data = request.json
         
+        # Check if data is not empty
+        if not data:
+            return jsonify({'error': 'No data provided'}), 400
+        
         # Check if all required fields are present
         required_fields = [
             'Race', 'Marital Status', 'N Stage', '6th Stage',
