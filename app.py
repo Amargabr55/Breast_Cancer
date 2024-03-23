@@ -16,22 +16,23 @@ def home():
 def predict():
     if request.method == 'POST':
         # Simulated JSON data for prediction
-        data = {}
-        data['Race'] = int(input("Enter Race: "))
-        data['Marital Status'] = int(input("Enter Marital Status: "))
-        data['N Stage'] = int(input("Enter N Stage: "))
-        data['6th Stage'] = int(input("Enter 6th Stage: "))
-        data['Differentiate'] = int(input("Enter Differentiate: "))
-        data['Grade'] = int(input("Enter Grade: "))
-        data['A Stage'] = int(input("Enter A Stage: "))
-        data['Estrogen Status'] = int(input("Enter Estrogen Status: "))
-        data['Progesterone Status'] = int(input("Enter Progesterone Status: "))
-        data['Age'] = int(input("Enter Age: "))
-        data['Tumor_Size'] = int(input("Enter Tumor Size: "))
-        data['Regional Node Examined'] = int(input("Enter Regional Node Examined: "))
-        data['Reginol Node Positive'] = int(input("Enter Reginol Node Positive: "))
-        data['Survival Months'] = int(input("Enter Survival Months: "))
-        data['Breast Cancer History'] = int(input("Enter Breast Cancer History: "))
+        data = {
+        'Race': int(input("Enter Race: ")),
+        'Marital Status': int(input("Enter Marital Status: ")),
+        'N Stage': int(input("Enter N Stage: ")),
+        '6th Stage': int(input("Enter 6th Stage: ")),
+        'Differentiate': int(input("Enter Differentiate: ")),
+        'Grade': int(input("Enter Grade: ")),
+        'A Stage': int(input("Enter A Stage: ")),
+        'Estrogen Status': int(input("Enter Estrogen Status: ")),
+        'Progesterone Status': int(input("Enter Progesterone Status: ")),
+        'Age': int(input("Enter Age: ")),
+        'Tumor_Size': int(input("Enter Tumor Size: ")),
+        'Regional Node Examined': int(input("Enter Regional Node Examined: ")),
+        'Reginol Node Positive': int(input("Enter Reginol Node Positive: ")),
+        'Survival Months': int(input("Enter Survival Months: ")),
+        'Breast Cancer History': int(input("Enter Breast Cancer History: "))
+    }
 
         # Check if all required fields are present
         required_fields = [
