@@ -1,4 +1,3 @@
-import json
 from flask import Flask, request, jsonify
 import pickle
 
@@ -15,25 +14,9 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        # Simulated JSON data for prediction
-        data = {
-            'Race': int(input("Enter Race: ")),
-            'Marital Status': int(input("Enter Marital Status: ")),
-            'N Stage': int(input("Enter N Stage: ")),
-            '6th Stage': int(input("Enter 6th Stage: ")),
-            'Differentiate': int(input("Enter Differentiate: ")),
-            'Grade': int(input("Enter Grade: ")),
-            'A Stage': int(input("Enter A Stage: ")),
-            'Estrogen Status': int(input("Enter Estrogen Status: ")),
-            'Progesterone Status': int(input("Enter Progesterone Status: ")),
-            'Age': int(input("Enter Age: ")),
-            'Tumor_Size': int(input("Enter Tumor Size: ")),
-            'Regional Node Examined': int(input("Enter Regional Node Examined: ")),
-            'Reginol Node Positive': int(input("Enter Reginol Node Positive: ")),
-            'Survival Months': int(input("Enter Survival Months: ")),
-            'Breast Cancer History': int(input("Enter Breast Cancer History: "))
-        }
-
+        # Get JSON data from the request
+        data = request.json
+        
         # Check if all required fields are present
         required_fields = [
             'Race', 'Marital Status', 'N Stage', '6th Stage',
