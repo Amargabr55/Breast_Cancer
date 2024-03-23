@@ -15,9 +15,24 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        # Get JSON data from the request
-        data = request.json
-        
+        # Simulated JSON data for prediction
+        data = {}
+        data['Race'] = int(input("Enter Race: "))
+        data['Marital Status'] = int(input("Enter Marital Status: "))
+        data['N Stage'] = int(input("Enter N Stage: "))
+        data['6th Stage'] = int(input("Enter 6th Stage: "))
+        data['Differentiate'] = int(input("Enter Differentiate: "))
+        data['Grade'] = int(input("Enter Grade: "))
+        data['A Stage'] = int(input("Enter A Stage: "))
+        data['Estrogen Status'] = int(input("Enter Estrogen Status: "))
+        data['Progesterone Status'] = int(input("Enter Progesterone Status: "))
+        data['Age'] = int(input("Enter Age: "))
+        data['Tumor_Size'] = int(input("Enter Tumor Size: "))
+        data['Regional Node Examined'] = int(input("Enter Regional Node Examined: "))
+        data['Reginol Node Positive'] = int(input("Enter Reginol Node Positive: "))
+        data['Survival Months'] = int(input("Enter Survival Months: "))
+        data['Breast Cancer History'] = int(input("Enter Breast Cancer History: "))
+
         # Check if all required fields are present
         required_fields = [
             'Race', 'Marital Status', 'N Stage', '6th Stage',
